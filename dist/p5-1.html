@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <script>
+    let cnv;
+
+    function setup() {
+      cnv = createCanvas(windowWidth, windowHeight);
+      cnv.parent('p5-container');
+
+      noCursor();
+    }
+
+
+    function draw() {
+        background(0,0);
+        // fill(255, 0, 0);
+        fill(random(255), random(255), random(255));
+        ellipse(mouseX, mouseY, 80, 80);
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+    }
+  </script>
+</body>
+</html>

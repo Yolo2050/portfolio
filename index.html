@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Acoder's portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Acoder의 개발물들을 담아 놓은 portfolio 페이지입니다."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome 아이콘 -->
+    <script
+      src="https://kit.fontawesome.com/b03e0737cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- p5.js 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  </head>
+  <body>
+    <!-- p5.js 캔버스를 포함할 div 요소 -->
+    <div id="p5Container" style="position: fixed; z-index: -1"></div>
+    <header>
+      <div class="container">
+        <!-- 내비게이션 바 -->
+        <nav>
+          <!-- 사이드 메뉴 -->
+          <ul id="side-menu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <!-- 메뉴 닫기 아이콘 -->
+            <i class="fas fa-times" onclick="closeMenu()"></i>
+          </ul>
+          <!-- 메뉴 열기 아이콘 -->
+          <i class="fas fa-bars" onclick="openMenu()"></i>
+        </nav>
+        <!-- 메인 화면의 텍스트 -->
+        <div class="header-text">
+          <!-- <p>a coder</p> -->
+          <h1>Hi, I'm <span>Acoder</span>.<br />This is my web portfolio.</h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- About Me 영역 -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <!-- 사용자 이미지 -->
+          <div class="about-col-1">
+            <img src="images/user.png" alt="User Image" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              ChatGPT를 비롯한 생성형 AI 도구를 활용하여 일상에 편리함을
+              제공하는 서비스를 만들고 있습니다. 특히, 사용자가 자연어로
+              소통함으로써 디지털 격차를 해소하는 데 도움을 주고자 합니다.
+            </p>
+            <div class="tab-titles">
+              <!-- Skills 탭 링크 -->
+              <p
+                class="tab-links active-link"
+                onclick="openTab(event, 'skills')"
+              >
+                Skills
+              </p>
+              <!-- Experience 탭 링크 -->
+              <p class="tab-links" onclick="openTab(event, 'experience')">
+                Experience
+              </p>
+              <!-- Education 탭 링크 -->
+              <p class="tab-links" onclick="openTab(event, 'education')">
+                Education
+              </p>
+            </div>
+            <!-- Skills 탭 내용 -->
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li>
+                  <span>AI Tools</span><br />Proficient in using Chat-GPT and
+                  other AI tools
+                </li>
+                <li>
+                  <span>App Development</span><br />Experienced in developing
+                  user-friendly applications
+                </li>
+              </ul>
+            </div>
+            <!-- Experience 탭 내용 -->
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>2024</span><br />Developed AI-powered service
+                  applications
+                </li>
+              </ul>
+            </div>
+            <!-- Education 탭 내용 -->
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2023</span><br />Completed a course on AI and Machine
+                  Learning
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Services 영역 -->
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fas fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              창의적이고 반응형 웹 디자인 솔루션을 제공합니다. 심미성과 기능성을
+              중시하여 직관적인 사용자 경험을 제공하는 시각적으로 뛰어난
+              웹사이트를 제작합니다. 혁신적인 디자인으로 온라인 존재감을
+              강화하고 관객의 시선을 사로잡습니다.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fas fa-crop-alt"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              사용자 중심의 UI/UX 디자인을 통해 만족도를 높입니다. 직관적인
+              인터페이스와 원활한 경험을 결합하여 뛰어난 디자인을 창출합니다.
+              제품의 사용성을 향상시키고 즐거운 사용자 여정을 보장합니다.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fab fa-app-store"></i>
+            <h2>App Design</h2>
+            <p>
+              iOS와 안드로이드 플랫폼을 위한 전문 앱 디자인 서비스를 제공합니다.
+              사용성을 우선으로 한 세련되고 현대적인 앱 인터페이스를 제작합니다.
+              와이어프레임부터 최종 디자인까지, 탁월한 사용자 경험을 제공하여
+              앱이 돋보이도록 합니다.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- My Work 영역 -->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-fineschool.png" />
+            <div class="layer">
+              <h3>eLearning App for Kids</h3>
+              <p>
+                파인슐레(영어유치원 브랜드)에서 사용하는 이러닝 앱입니다.
+                Download it from play store.
+              </p>
+              <a href="https://fineschool.app"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-fingerschool.png" />
+            <div class="layer">
+              <h3>eLearning App for Kids</h3>
+              <p>
+                영어 입문용 (일반 유치원 및 초등 저학년용) 이러닝 앱입니다.
+                Download it from play store.
+              </p>
+              <a href="https://fingerschool.app"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Social Media App</h3>
+              <p>
+                The app connects you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Gallery Website</h3>
+              <p>
+                The app connects you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Digital Branding</h3>
+              <p>
+                The app connects you yo the talented people around the world.
+                Download it from play store.
+              </p>
+              <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-- Contact Me 영역 -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fas fa-paper-plane"></i> acoder2050@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> 010-5190-????</p>
+            <div class="social-icons">
+              <a href="https://facebook.com/"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href=""><i class="fab fa-twitter-square"></i></a>
+              <a href=""><i class="fab fa-instagram"></i></a>
+              <a href=""><i class="fab fa-linkedin"></i></a>
+            </div>
+            <a href="images/my-cv.pdf" download class="btn btn2">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <!-- Google Sheets와 연동된 폼 -->
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required autocomplete="name"/>
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required autocomplete="email"
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright © Acoder</p>
+      </div>
+    </div>
+
+    <!-- 외부 JavaScript 파일 참조 -->
+    <script src="script.js"></script>
+  </body>
+</html>
